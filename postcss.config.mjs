@@ -2,6 +2,7 @@
 const config = {
   plugins: {
     tailwindcss: {},
+    ...(process.env.NEXT_PUBLIC_MODE === 'production' ? { cssnano: {} } : {}),
   },
 };
 
