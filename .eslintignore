@@ -1,0 +1,12 @@
+dist
+node_modules
+public/assets/**/*.*
+build
+out
+sw.js
+workbox-*
+fallback-*
+tailwind.config.js
+.next
+node_modules
+.husky

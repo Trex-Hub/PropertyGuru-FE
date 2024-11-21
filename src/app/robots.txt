@@ -1,0 +1,11 @@
+User-agent: *
+
+Allow: /
+
+Disallow: /emaar-lead-submission-form
+Disallow: /off-plan-properties-in-dubai-2
+Disallow: /en/new-featured
+
+Sitemap: https://www.propertyguru.ae/sitemap.xml
+Sitemap: https://www.propertyguru.ae/en/properties/sitemap.xml
+Sitemap: https://www.propertyguru.ae/en/estate_developer/sitemap.xml

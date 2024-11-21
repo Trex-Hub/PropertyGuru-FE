@@ -1,20 +1,146 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-const config: Config = {
+const config = {
+  darkMode: ['class'],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: '',
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        boxShadow: {
+          'text-md': '1px 1px 3px rgba(0, 0, 0, 0.3)',
+        },
+        primary: {
+          backgroundColor: '#FFFFFF',
+          searchButtonColor: '#66B269',
+          labelColor: '#3CBF58',
+          viewAllColor: '#3CBF58',
+          footerColor: '#2C2C2C',
+          textColor: '#000000',
+          primaryTextColor: '#333333',
+          secondaryTextColor: '#7A7A7A',
+          searchFooterColor: '#EBF9EECC',
+          iconColor: '#5C727D',
+          dropdownIconColor: '#AEAEAE',
+          whiteTextColor: '#FFFFFF',
+          footerTitleColor: '#999999',
+          footerTextColor: '#BBBBBB',
+          dividerColor: '#CCCCCC',
+          searchDropdownTextColor: '#747474',
+          radioButtonTextColor: '#555555',
+          getStartedBackgroundColor: '#E9F7EB',
+          titleTextColor: '#222222',
+          inputFieldBackgroundColor: '#EBF4F7',
+          bannerBackgroundColor: '#F7F7F7',
+          footerIconBackgroundColor: '#313131',
+          iconBackgroundColor: '#F5F7F7',
+          settingsBackgroundColor: '#F7F7F7',
+          footerCopyrightBackgroundColor: '#1F1F1F',
+          underConstructionBackgroundColor: '#FFF5D1',
+          preLaunchBackgroundColor: '#EBDDF7',
+          deliveredBackgroundColor: '#E2F2F9',
+          readyToMoveBackgroundColor: '#DBF4E0',
+          dropdownInputBorderColor: '#D3E0E5',
+          loginBorder: '#B8C6CC',
+          loginTextColor: '#33A64C',
+          paymentPlanButtonColor: '#EFEFEF',
+          paymentPlanButtonTextColor: '#828282',
+          forgetPasswordTextColor: '#667880',
+          textGrayColor: '#B4B4B4',
+          headerBannerBackgroundColor: '#434443',
+          dbpaymentbuttonbgcolor: '#33A64C26',
+          similarlistingbg: '#F6F6F6',
+          stickyIconBackground: '#FDFDFD',
+          contactUsTextColor: '#666666',
+          enquiryFormBorderColor: '#E8E8E8',
+          featuredPropertiesBackgroundColor: '#F6F6F6',
+          moreFilterDividerColor: '#D9D9D9',
+          moreFilterBackgroundColor: '#9FCA98',
+          paginationButtonColor: '#EDF9F0',
+          paymentbuttonbacground: '#F1F1F1',
+          paymentplancbg: '#F9F9F9',
+          preLaunchFlagBackgroundColor: '#7A39CC',
+          availableBorderColor: '#E7D427',
+          availableBackgroundColor: '#FFF5D1',
+          crossIconColor: '#FF0000',
+          emaarTitle: '#3cb758',
+          backgroundGrayMCalc: '#FAFAFA',
+          aboutUsInsightBackgroundColor: '#F7F9F9',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      fontFamily: {
+        primary: ['var(--font-nunito-sans)', 'sans-serif'],
+        secondary: ['var(--font-poppins)', 'sans-serif'],
+        teriary: ['var(--font-montserrat)', 'sans-serif'],
+        quaternary: ['var(--font-roboto-serif)', 'sans-serif'],
+        quinary: ['var(--font-roboto-slab)', 'sans-serif'],
+        senary: ['var(--font-roboto)', 'sans-serif'],
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [],
-};
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config;
+
 export default config;
